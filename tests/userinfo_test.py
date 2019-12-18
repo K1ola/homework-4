@@ -31,17 +31,17 @@ class UserinfoTest(unittest.TestCase):
         # self.userinfo_form.wait_for_logout()
         self.driver.quit()
 
-    def test_tick_in_time_zone(self):  
-        TIMEZONE_SELECT_LIST_VALUE = '(GMT+03:00) Москва, Санкт-Петербург' 
+    # def test_check_timezone(self):  
+    #     TIMEZONE_SELECT_LIST_VALUE = '(GMT+03:00) Москва, Санкт-Петербург' 
 
-        self.userinfo_form.uncheck_tick()
-        self.userinfo_form.wait_for_timezone_selector_first_value(TIMEZONE_SELECT_LIST_VALUE)
-        self.assertEqual(TIMEZONE_SELECT_LIST_VALUE, self.userinfo_form.get_timezone_selector_first_value())
+    #     self.userinfo_form.uncheck_tick()
+    #     self.userinfo_form.wait_for_timezone_selector_first_value(TIMEZONE_SELECT_LIST_VALUE)
+    #     self.assertEqual(TIMEZONE_SELECT_LIST_VALUE, self.userinfo_form.get_timezone_selector_first_value())
 
-    # def test_load_image(self):        
-    #     self.userinfo_form.load_image()
-    #     self.userinfo_form.get_save_avatar_button()
-    #     self.userinfo_form.get_cancel_avatar_button()
+    def test_image_preview_buttons(self):        
+        self.userinfo_form.load_image()
+        self.userinfo_form.get_save_avatar_button()
+        self.userinfo_form.get_cancel_avatar_button()
         
     # def test_cancel_changed_data(self):
     #     SURNAME_NEW_VALUE = 'new surname'
@@ -53,7 +53,7 @@ class UserinfoTest(unittest.TestCase):
     #     new_surname_value = self.userinfo_form.get_surname_value()
     #     self.assertEqual(old_surname_value, new_surname_value)
 
-    # def test_error_saving(self):
+    # def test_save_empty_field(self):
     #     TOP_MESSAGE = 'Не заполнены необходимые поля'
     #     SURNAME_ERROR = 'Заполните обязательное поле'
     #     EMPTY_SURNAME = ''
@@ -132,19 +132,19 @@ class UserinfoTest(unittest.TestCase):
     #     self.userinfo_form.match_to_login_URI()
 
 
-    # def test_date_lists(self):
-    #     DAY_CHILD_INPUT = 20
-    #     MONTH_CHILD_INPUT = 12
-    #     YEAR_CHILD_INPUT = 1996
+    def test_date_lists(self):
+        DAY_CHILD_INPUT = 20
+        MONTH_CHILD_INPUT = 12
+        YEAR_CHILD_INPUT = 1996
 
-    #     self.userinfo_form.click_on_day_input()
-    #     self.userinfo_form.click_on_day_child_input(DAY_CHILD_INPUT)
-    #     self.userinfo_form.click_on_month_input()
+        self.userinfo_form.click_on_day_input()
+        self.userinfo_form.click_on_day_child_input(DAY_CHILD_INPUT)
+        self.userinfo_form.click_on_month_input()
 
-    #     self.userinfo_form.click_on_month_child_input(MONTH_CHILD_INPUT)
-    #     self.userinfo_form.click_on_year_input()
+        self.userinfo_form.click_on_month_child_input(MONTH_CHILD_INPUT)
+        self.userinfo_form.click_on_year_input()
         
-    #     self.userinfo_form.click_on_year_child_input(YEAR_CHILD_INPUT)
+        self.userinfo_form.click_on_year_child_input(YEAR_CHILD_INPUT)
 
-    #     self.userinfo_form.save()
-    #     self.userinfo_page.open()
+        self.userinfo_form.save()
+        self.userinfo_page.open()
