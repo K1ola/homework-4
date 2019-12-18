@@ -42,4 +42,13 @@ def wait_for_element_by_xpath(driver, xpath, visible=True):
         return WebDriverWait(driver, 30, 0.1).until(
             expected_conditions.invisibility_of_element_located((By.XPATH, xpath))
         )  
-  
+
+def wait_for_element_text(driver, selector, text):
+    return WebDriverWait(driver, 30, 0.1).until(
+            expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, selector), text)
+        )  
+
+def wait_for_element_text_by_xpath(driver, selector, text):
+    return WebDriverWait(driver, 30, 0.1).until(
+            expected_conditions.text_to_be_present_in_element((By.XPATH, selector), text)
+        )        
